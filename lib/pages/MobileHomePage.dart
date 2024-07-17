@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sampark_web/Widgets/Devider.dart';
-import 'package:sampark_web/Widgets/Maininfo.dart';
-import 'package:sampark_web/Widgets/ScreenShort.dart';
+import 'package:uni_chat_web/Widgets/ScreenShort.dart';
 
-import '../Widgets/WebFeaturesWidget.dart';
+import '../Widgets/Devider.dart';
 
 class MobileHomePage extends StatelessWidget {
   const MobileHomePage({super.key});
@@ -13,35 +11,40 @@ class MobileHomePage extends StatelessWidget {
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
-            "assets/photos/logo.png",
-            width: 30,
+            "assets/icons/app_icon.png",
+            width: 50,
           ),
         ),
-        title: Text(
-          'SAMAPRK',
+        title: const Text(
+          'UniChat',
           style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 24,
           ),
+
         ),
         actions: [
           ElevatedButton.icon(
             onPressed: () {},
-            icon: Icon(
-              Icons.download,
-              color: Colors.white,
-            ),
-            label: Text(
-              'Donwload',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onBackground,
+            icon: const Icon(Icons.download),
+            label: const Text('Download'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.deepPurple,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              textStyle: const TextStyle(fontSize: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           )
         ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(30),
         child: ListView(
@@ -55,9 +58,9 @@ class MobileHomePage extends StatelessWidget {
                       "assets/photos/logo.png",
                       width: 50,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
-                      "SAMPARK",
+                      "UniChat",
                       style: TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
@@ -101,11 +104,11 @@ class MobileHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 30,
                         vertical: 20,
                       ),
@@ -113,7 +116,7 @@ class MobileHomePage extends StatelessWidget {
                         color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Row(
+                      child: const Row(
                         children: [
                           Icon(
                             Icons.android,
@@ -147,16 +150,16 @@ class MobileHomePage extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
             ),
-            SizedBox(height: 40),
-            SizedBox(height: 40),
-            MyDevider(),
-            ScreenShortPage(),
-            SizedBox(height: 40),
-            Row(
+            const SizedBox(height: 40),
+            const SizedBox(height: 40),
+            const MyDivider(),
+            const ScreenshotPage(),
+            const SizedBox(height: 40),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Made with ❤️ By Nitish kumar",
+                  "Made with ❤️ By Ajay kumar",
                   style: TextStyle(
                     fontSize: 10,
                     color: Colors.grey,
