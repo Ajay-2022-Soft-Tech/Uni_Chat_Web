@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 import 'dart:html' as html;
 class AppController extends GetxController{
 
-  String appUrl = "https://github.com/Ajay-2022-Soft-Tech/UNICHAT/releases/download/1.0.0/UniChat.apk";
+  String appUrl = "https://github.com/Ajay-2022-Soft-Tech/UNICHAT/releases/download/1.1.0/UniChat.1.1.0.apk";
 
-  String apkName = "UniChat.apk";
+  String apkName = "UniChat.1.1.0.apk";
 
   Future downloadApk() async {
     try {
