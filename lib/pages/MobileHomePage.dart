@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:uni_chat_web/Widgets/ScreenShort.dart';
 
+import '../Config/AppController.dart';
 import '../Widgets/Devider.dart';
 
 class MobileHomePage extends StatelessWidget {
@@ -8,6 +11,9 @@ class MobileHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    AppController appController = Get.put(AppController());
+
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +35,10 @@ class MobileHomePage extends StatelessWidget {
         ),
         actions: [
           ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              appController.downloadApk();
+
+            },
             icon: const Icon(Icons.download),
             label: const Text('Download'),
             style: ElevatedButton.styleFrom(
@@ -116,22 +125,28 @@ class MobileHomePage extends StatelessWidget {
                         color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.android,
-                            size: 30,
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "Download App",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                      child: InkWell(
+                        onTap: (){
+                          appController.downloadApk();
+
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.android,
+                              size: 30,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 10),
+                            Text(
+                              "Download App",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

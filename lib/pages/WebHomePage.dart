@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:uni_chat_web/Config/AppController.dart';
 import 'package:uni_chat_web/Widgets/ScreenShort.dart';
-
 import '../Widgets/MainInfo.dart';
 import '../Widgets/WebFeaturesWidget.dart';
 
@@ -9,6 +11,8 @@ class WebHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppController appController = Get.put(AppController());
+
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -31,7 +35,9 @@ class WebHomePage extends StatelessWidget {
         ),
         actions: [
           ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              appController.downloadApk();
+            },
             icon: const Icon(Icons.download),
             label: const Text('Download'),
             style: ElevatedButton.styleFrom(
